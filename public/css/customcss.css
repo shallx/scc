@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
+
+.content {
+    font-family: 'Lora', serif;
+}
+
+.tab-row .col-1, .tab-row .col-2 {
+    border:0.2px solid grey;
+}
+
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+.c-font-title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.c-font-name {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+}
+
+@media (max-width: 767.98px) { 
+    .c-font-name {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12px;
+    }
+ }
+
+.mycard {
+    height: 250px;
+}
