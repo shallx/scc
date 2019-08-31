@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-            <div class="card-header">Search Results ( {{$results->total()}} )</div>
+            <div class="card-header">Search Results ( {{$results->total()}} ) <span class="float-right"><a href="peoples" class="btn btn-default border">Back</a></span></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -47,6 +47,7 @@
                                             </div>
                                             
                                         </div>
+                                        <div><a name="" id="" class="btn btn-default editbtn p-1 border" href="peoples/{{$result->id}}/edit" role="button">Edit</a></div>
                                     </div>
                                 </div>
 
@@ -83,16 +84,26 @@
 
 @section('customscript')
     <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="js/jQuery.highlight.js"></script>
-    <script>
-        // $("body").seekAndWrap({
-        //     "search":{{$search_term}}
-        //     });
 
+    <script>
         jQuery(document).ready(function(){
-            jQuery('body').highlight({{$search_term}},{
-            wholeWord: true // or false
-            });
+            jQuery(window).on('load', function(){
+                highlight();
+            })
+            function highlight(){
+                var content = jQuery("body").html();
+                var searchExp = new RegExp("{{$search_term}}", "ig");
+                var matches = content.match(searchExp);
+                console.log(matches);
+                if(matches)
+                {
+                    jQuery("body").html(content.replace(searchExp, function(match){
+                        return "<span class='highlight'>" + match + "</span>";
+                    }));
+                }
+
+            }
         });
     </script>
+
 @endsection

@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Voter List <span class="float-right"><a href="listings/create" class="btn btn-primary">Create Listing</a></span></div>
+                <div class="card-header">Voter List <span class="float-right"></span></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -45,8 +45,10 @@
                                                     
                                                 </div>
                                             </div>
+                                        
                                             
                                         </div>
+                                        <div><a name="" id="" class="btn btn-default editbtn p-1 border" href="peoples/{{$people->id}}/edit" role="button">Edit</a></div>
                                     </div>
                                 </div>
 
@@ -56,7 +58,7 @@
                     </div>
                     @endif
                 </div>
-                    <nav aria-label="Page navigation example">
+                    <nav aria-label="Page navigation example" class="mx-auto">
                         <ul class="pagination">
                             <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">

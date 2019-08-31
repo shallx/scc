@@ -11,16 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PeoplesController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'PeoplesController@search');
 Route::get('/insertimage', 'PeoplesController@setImagePath');
-Route::get('/tiasha', 'PeoplesController@getTiasha');
 
 Route::resource('peoples', 'PeoplesController');
 

@@ -63,7 +63,8 @@ class PeoplesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $person = People::find($id);
+        return view('peoples.edit')->with('person', $person);
     }
 
     /**
@@ -75,7 +76,20 @@ class PeoplesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'tin' => 'required|numeric',
+            'phone' => 'required|numeric',
+        ]);
+        $person = People::find($id);
+        $person->mcode = $request->input('mcode');
+        $person->bname = $request->input('bname');
+        $person->faddress = $request->input('faddress');
+        $person->vname = $request->input('vname');
+        $person->phone = $request->input('phone');
+        $person->tin = $request->input('tin');
+        $person->save();
+
+        return view('peoples.edit')->with('success', 'Successfully Edited')->with('person', $person);
     }
 
     /**
@@ -109,9 +123,5 @@ class PeoplesController extends Controller
         return "Success";
     }
 
-    public function getTiasha(){
-        $var = auth()->user()->name;
-        $var = strtolower($var);
-        return $var;
-    }
+    
 }
