@@ -89,7 +89,7 @@ class PeoplesController extends Controller
         $person->tin = $request->input('tin');
         $person->save();
 
-        return view('peoples.edit')->with('success', 'Successfully Edited')->with('person', $person);
+        return view('success')->with('success', 'Successfully Edited')->with('person', $person);
     }
 
     /**

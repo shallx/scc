@@ -15,13 +15,10 @@
               <li class="nav-item {{Request::is('/login') ? 'active' : ''}}">
                 <a class="nav-link" href="/login">Login</a>
               </li>
-              <li class="nav-item {{Request::is('/register') ? 'active' : ''}}">
-                <a class="nav-link" href="/register">Register</a>
-              </li>
             @endunless
           </ul>
           @auth
-              <form action="/logout" method="POST" class="float-right">
+              <form action="/logout" method="POST" class="ml-2 mt-2 float-right">
                 @csrf
                 <input type="submit" value="Logout" class="btn btn-outline-danger mr-2">
               </form>

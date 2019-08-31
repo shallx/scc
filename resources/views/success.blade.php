@@ -14,10 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in! 
-                    <?php
-                        echo auth()->user()->name;
-                    ?>
+                    <div class="alert alert-success" role="alert">
+                        <strong>Successfully Edited!!</strong>
+                    </div>
                 </div>
             </div>
         </div>

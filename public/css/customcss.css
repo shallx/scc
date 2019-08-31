@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 .content {
     font-family: 'Lora', serif;
@@ -17,25 +15,26 @@
 }
 
 .c-font-title {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
 }
 
 .c-font-name {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
 
 .editbtn {
     position: absolute;
-    bottom: 30px;
-    right: 40px;
+    bottom: 20px;
+    right: 35px;
 }
 
 .highlight {
     background: yellow;
     font-weight: bold;
 }
+
 
 @media (max-width: 767.98px) { 
     .c-font-name {
@@ -47,4 +46,3 @@
 .mycard {
     height: 250px;
 }
-

@@ -34,13 +34,13 @@
                                             </div>
                                         </div>
                                         <div class="col-7">
-                                            <div class="col-4 offset-8 mt-3">{{$result->id}}</div>
+                                            <div class="col-4 offset-8 mt-3"><small>{{$result->id}}</small></div>
                                             <div class="row mt-4">
 
                                                 <div class="col-12 c-font-title">
                                                     <div><i class="fa fa-briefcase mr-2 rounded-circle" aria-hidden="true" style="color:sienna;"></i></span>{{$result->bname}}</div>
                                                     <div><i class="fa fa-map-marker-alt mr-2 rounded-circle" aria-hidden="true" style="color:crimson"></i>{{$result->faddress}}</div>
-                                                    <div><i class="fa fa-phone mr-2 rounded-circle" aria-hidden="true" style="color:darkturquoise"></i>{{$result->phone}}</div>
+                                                    <div><i class="fa fa-phone mr-2 rounded-circle" aria-hidden="true" style="color:darkturquoise"></i><a href="tel:{{$result->phone}}">{{$result->phone}}</a></div>
                                                     <div><i class="fa fa-address-card mr-2 rounded-circle" aria-hidden="true" style="color:seagreen;"></i>{{$result->tin}}</div>
                                                     
                                                 </div>
@@ -86,6 +86,8 @@
     <script src="//code.jquery.com/jquery.min.js"></script>
 
     <script>
+        //Highlight Code
+        
         jQuery(document).ready(function(){
             jQuery(window).on('load', function(){
                 highlight();
