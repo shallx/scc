@@ -22,7 +22,7 @@
                                         <div class="col-5"> 
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <h5 class="text-center c-font-name p-1"><b>M-Code: {{$people->mcode}}</b></h5>
+                                                    <h5 class="text-center c-font-name"><b>M-Code: {{$people->mcode}}</b></h5>
                                                 </div>
                                                 
                                                 <div class="col-12">
@@ -33,9 +33,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-7">
-                                            <div class="col-4 offset-8 mt-3"><small>{{$people->id}}</small></div>
-                                            <div class="row mt-4">
+                                        <div class="col-7 mt-2">
+                                            <div class="col-5 offset-7"><small>{{$people->id}}</small></div>
+                                            <div class="row mt-1">
 
                                                 <div class="col-12 c-font-title">
                                                     <div><i class="fa fa-briefcase mr-2 rounded-circle" aria-hidden="true" style="color:sienna;"></i></span>{{$people->bname}}</div>
@@ -67,7 +67,7 @@
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 </li>
-                                {{$peoples->links()}}
+                                {{$peoples->render()}}
                                 <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                     <span class="sr-only">Next</span>

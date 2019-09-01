@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class PeoplesController extends Controller
 {
@@ -18,7 +19,7 @@ class PeoplesController extends Controller
     }
     public function index()
     {
-        $peoples = People::paginate(15);
+        $peoples = People::paginate(15)->onEachSide(1);
 
         return view('peoples.index3')->with('peoples', $peoples);
     }
@@ -105,12 +106,32 @@ class PeoplesController extends Controller
 
     public function search(Request $request)
     {
+        $validate = $request->validate([
+            'search' => 'required',
+         ]);
         $search_term = $request->input('search');
-        $results = People::where( 'bname', 'LIKE', '%' . $search_term . '%' )->orWhere( 'phone', 'LIKE', '%' . $search_term . '%' )->orWhere( 'vname', 'LIKE', '%' . $search_term . '%' )->orWhere( 'faddress', 'LIKE', '%' . $search_term . '%' )->orWhere( 'mcode', 'LIKE', '%' . $search_term . '%' )->paginate(15);
-        return view('searchResult')->with('results', $results)->with('search_term', $search_term)->with('size', sizeof($results));
+        $results = People::where( 'bname', 'LIKE', '%' . $search_term . '%' )
+            ->orWhere( 'phone', 'LIKE', '%' . $search_term . '%' )
+            ->orWhere( 'vname', 'LIKE', '%' . $search_term . '%' )
+            ->orWhere( 'faddress', 'LIKE', '%' . $search_term . '%' )
+            ->orWhere( 'mcode', 'LIKE', '%' . $search_term . '%' )
+            ->orWhere( 'id', 'LIKE', '%' . $search_term . '%' )
+            ->paginate(15)
+            ->onEachSide(1)
+            ->setpath('');
+            
+            $results->appends(array(
+                'search' => Input::get('search')
+            ));
+            if(count($results) > 0){
+                return view('searchResult')->with('results', $results)->with('search_term', $search_term)->with('size', sizeof($results));
+            }
+            return view('searchResult')->with('errormsg', 'No Data Found!!')
+                                       ->with('search_term', $search_term);
     }
 
     public function setImagePath(){
+        
         $people = People::all();
         $size = sizeof($people);
         for($i=1;$i <= $size; $i++){

@@ -5,16 +5,18 @@
         <div class="col-md-12">
             <div class="card">
             <div class="card-header">Search Results ( {{$results->total()}} ) <span class="float-right"><a href="peoples" class="btn btn-default border">Back</a></span></div>
-
+                   
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    @isset($errormsg)
+                        <div class='alert alert-danger'>{{$errormsg}}</div>
+                    @endisset
                     <div class="row">
-                    @if(count($results))
+                    @if(isset($results))
                         @foreach ($results as $result)
                             <div class="col-lg-6 col-xs-12">
                                 <div class="mycard m-3 border">
@@ -33,9 +35,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-7">
-                                            <div class="col-4 offset-8 mt-3"><small>{{$result->id}}</small></div>
-                                            <div class="row mt-4">
+                                        <div class="col-7 mt-2">
+                                            <div class="col-5 offset-7"><small>{{$result->id}}</small></div>
+                                            <div class="row mt-1">
 
                                                 <div class="col-12 c-font-title">
                                                     <div><i class="fa fa-briefcase mr-2 rounded-circle" aria-hidden="true" style="color:sienna;"></i></span>{{$result->bname}}</div>
@@ -57,22 +59,14 @@
                     </div>
                     @endif
                 </div>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            </li>
-                            {{$results->links()}}
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    @isset($results)
+                        <div class="container">
+
+                            {{$results->render()}}
+                        </div>
+                    
+                        
+                    @endisset
             </div>
         </div>
     </div>
@@ -88,24 +82,24 @@
     <script>
         //Highlight Code
         
-        jQuery(document).ready(function(){
-            jQuery(window).on('load', function(){
-                highlight();
-            })
-            function highlight(){
-                var content = jQuery("body").html();
-                var searchExp = new RegExp("{{$search_term}}", "ig");
-                var matches = content.match(searchExp);
-                console.log(matches);
-                if(matches)
-                {
-                    jQuery("body").html(content.replace(searchExp, function(match){
-                        return "<span class='highlight'>" + match + "</span>";
-                    }));
-                }
+        // jQuery(document).ready(function(){
+        //     jQuery(window).on('load', function(){
+        //         highlight();
+        //     })
+        //     function highlight(){
+        //         var content = jQuery("body").html();
+        //         var searchExp = new RegExp("{{$search_term}}", "ig");
+        //         var matches = content.match(searchExp);
+        //         console.log(matches);
+        //         if(matches)
+        //         {
+        //             jQuery(".content").html(content.replace(searchExp, function(match){
+        //                 return "<span class='highlight'>" + match + "</span>";
+        //             }));
+        //         }
 
-            }
-        });
+        //     }
+        // });
     </script>
 
 @endsection

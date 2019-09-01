@@ -16,7 +16,7 @@ Route::get('/', 'PeoplesController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/search', 'PeoplesController@search');
+Route::any('search', 'PeoplesController@search');
 Route::get('/insertimage', 'PeoplesController@setImagePath');
 
 Route::resource('peoples', 'PeoplesController');
