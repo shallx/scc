@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2019 at 12:12 AM
+-- Generation Time: Aug 31, 2019 at 05:14 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -56,6 +56,13 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('voterscc@gmail.com', '$2y$10$x8fXiy1kKghgfFWuI8q1b.U1NvttyOfiGLiGuZG9bnXkZGktd.bgi', '2019-08-31 08:36:56');
+
 -- --------------------------------------------------------
 
 --
@@ -80,7 +87,7 @@ CREATE TABLE `people` (
 --
 
 INSERT INTO `people` (`id`, `mcode`, `bname`, `faddress`, `vname`, `phone`, `tin`, `image_path`, `created_at`, `updated_at`) VALUES
-(1, 1, 'M/S. MD. IQBAL HOSSAIN CHOWDHURY', ' 123, SWARNOSHIKHA KADAMTOLI, SYLHET. ', 'MR. MD. IQBAL HOSSAIN CHOWDHURY', '01715571105', '235353184772', 'storage/images/1.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
+(1, 1, 'M/s. Md. Iqbal Hossain Chowdhury', '123, Swarnoshikha Kadamtoli, Sylhet.', 'MR. MD. IQBAL HOSSAIN CHOWDHURY', '01715571105', '235353184772', 'storage/images/1.jpg', '0000-00-00 00:00:00', '2019-08-31 08:25:35'),
 (2, 2, 'M/S. CENTURY ENTERPRISE', ' RAYNOGOR, RAJBARI, SYLHET. ', 'MR. MD. ROWSHON AHMED CHOWDHURY', '01711152716', '420303841360', 'storage/images/2.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (3, 3, 'M/S. AZHARUL HAQUE CHOWDHURY', ' 175, SUVECHA, MIAH FAZIL CHIST, SUBIDBAZAR, SYLHET. ', 'MR. AZHARUL HAQUE CHOWDHURY', '01711975195', '518340602771', 'storage/images/3.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (4, 4, 'M/S. SALAH UDDIN ALI AHMED', ' LALDIGHIRPAR, SYLHET. ', 'MR. MD. MAHDI SALEHIN', '01711329365', '185751403606', 'storage/images/4.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
@@ -100,7 +107,7 @@ INSERT INTO `people` (`id`, `mcode`, `bname`, `faddress`, `vname`, `phone`, `tin
 (18, 22, 'M/S  MD.JOHIR HOSSAIN HOUSE', ' # 290, ROAD # 03, BLOCK # H, SHAHJALAL UPOSHAHAR, SYLHET.', 'MR. MD. JOHIR HOSSAIN', '01711323372', '839101937907', 'storage/images/22.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (19, 23, 'M/S. URMI ENTERPRISE ', '117, KOLOKAKOLI, LALADIGHIRPAR, SYLHET. ', 'MR. UTTAM KUMAR DEY', '01715274317', '175767436681', 'storage/images/23.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (20, 24, 'M/S. ATIK HUSSAIN ', 'AMJAD ALI ROAD,KALIGHAT, SYLHET. ', 'MR. MD. KOBIR HUSSAIN', '01919134203', '132950796572', 'storage/images/24.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
-(21, 26, 'M/S. DIXON ENTERPRISE', ' LATIF CENTER (2ND FLOOR),ZINDABAZAR, SYLHET.', 'MR. MD. NURUL ISLAM', '01711920720', '172899109152', 'storage/images/26.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
+(21, 26, 'M/s. Dixon Enterprise', 'Latif Center (2nd Floor), zindabazar, Sylhet.', 'MR. MD. NURUL ISLAM', '01711920720', '172899109152', 'storage/images/26.jpg', '0000-00-00 00:00:00', '2019-08-31 08:27:52'),
 (22, 27, 'M/S. JEE-CO (JEENATH & COMPANY) ', '185, WEST PEER MOHALLA, SYLHET. ', 'MR. MOHD. AZIZUR RAHMAN SHUNDOR', '01711138223', '114449747099', 'storage/images/27.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (23, 30, 'M/S. UNIVERSAL TRADING ', 'KADAMTOLI, SYLHET. ', 'MR. MOHAMMED ABDULLAH', '01711406070', '880929205307', 'storage/images/30.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (24, 31, 'M/S. MENDIBAG BRICKS CORPORATION ', 'HATIMNAGOR DAKSHIN, HATIMGONJ, GOLAPGONJ, SYLHET.', 'MR. MUJIBUR RAHMAN', '01711813800', '585649253112', 'storage/images/31.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
@@ -114,7 +121,7 @@ INSERT INTO `people` (`id`, `mcode`, `bname`, `faddress`, `vname`, `phone`, `tin
 (32, 43, 'M/S. MOHAMMED OZIUR RAHMAN ', '49, PROTTOY R/A, RAYNAGOR, SYLHET.', 'MR. MD. KOBIR HUSSAIN', '01711327400', '419242431329', 'storage/images/43.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (33, 44, 'M/S. TAHIR & SONS ', ' EASTERN PLAZA (GROUND FLOOR), AIRPORT ROAD, AMBERKAHANA, SYLHET.', 'MR. MD. NURUL ISLAM', '01711923025', '359446634071', 'storage/images/44.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (34, 51, 'M/S. KHALILUR RAHMAN ', 'WEST KAZIRBAZAR, SYLHET.', 'MR. KHALILUR RAHMAN', '01711383091', '849536901142', 'storage/images/51.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
-(35, 53, 'M/S. DOLPHIN SERVICES (PVT) LTD ', '209/211, LATIF CENTER (1ST FLOOR),ZINDABAZAR,SYLHET.', 'MR. MD. JAMAL YAKUB', '01711329330', '293903630677', 'storage/images/53.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
+(35, 53, 'M/s. Dolphin Services (pvt) Ltd', '209/211, Latif Center (1st Floor), Zindabazar, sylhet.', 'MR. MD. JAMAL YAKUB', '01711329330', '293903630677', 'storage/images/53.jpg', '0000-00-00 00:00:00', '2019-08-31 08:28:28'),
 (36, 54, 'M/S. NISHITA FOODS ', 'A/49, NEW MARKET,LALDIGHIRPAR, SYLHET.', 'MR. PATHIK PAUL', '01711975026', '535482593726', 'storage/images/54.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (37, 55, 'M/S. KAMAL AHMED ', 'PURBASHA E/1, AKHALIA, SYLHET.', 'MR. KAMAL AHMED', '01711325047', '562495684878', 'storage/images/55.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
 (38, 56, 'M/S. RAHIM BROTHERS ', 'RAHIM TOWER (4TH FLOOR),SUBHANIGHAT, SYLHET.', 'MD. MD. ABDUL MATIN', '01727062895', '660373783021', 'storage/images/56.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:22'),
@@ -805,7 +812,7 @@ INSERT INTO `people` (`id`, `mcode`, `bname`, `faddress`, `vname`, `phone`, `tin
 (720, 2691, 'M/S. CONFIDENCE ELECTRONICS ', 'SHIBGONJ BAZAR (95,GULAPBAG), SYLHET. ', 'MR. MURSHIDUL ISLAM RASHIK', '01726079516', '730286140488', 'storage/images/2691.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
 (721, 2693, 'M/S. BOSHUNDHARA MOTORS ', 'DARGAH GATE, SYLHET. ', 'MR. JUBAIR RAQUIB CHOWDHURY', '01711983110, 01730657447', '164963720145', 'storage/images/2693.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
 (722, 2694, 'M/S. BOSHUNDHARA MOTORS ', 'BISHWAROAD,SUBHANIGHAT, SYLHET. ', 'MR. TOFAIL AHMED CHOUDHURY-', '01711380239, 01730657447', '640006831066', 'storage/images/2694.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
-(723, 2698, 'M/S. SHAMSUN NAHAR VARIETIES STORE', 'VARIETIES STORE KHURMA, KAMALBAZAR, BISWANATH, SYLHET. ', 'MR. MD ALAL HUSSAIN', '01712756911', '488994754159', 'storage/images/2698.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
+(723, 2698, 'M/s. Shamsun Nahar Varieties Store', 'Varieties Store Khurma, Kamal bazar, Biswanath, Sylhet.', 'MR. MD ALAL HUSSAIN', '01712756911', '488994754159', 'storage/images/2698.jpg', '0000-00-00 00:00:00', '2019-08-30 17:15:49'),
 (724, 2701, 'M/S. FAMOUS', 'BARUTHKHANA POINT, SYLHET. ', 'MR. MD. NAJIM UDDIN', '01711968232', '269425603524', 'storage/images/2701.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
 (725, 2702, 'M/S. NEW AMDAD CLOTH STORE ', '154-156, MODHUBAN SUPER MARKET, BANDARBAZAR, SYLHET. ', 'MR. KAFIL AHMED', '01711932601', '599295984308', 'storage/images/2702.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
 (726, 2703, 'M/S. NEW SALFA GARMENTS', '173, MODHUBAN SUPER MARKET, BANDARBAZAR, SYLHET. ', 'MR. SHEK MD. JUNED AHMED', '01715020756', '611181203433', 'storage/images/2703.jpg', '0000-00-00 00:00:00', '2019-08-30 16:03:25'),
@@ -1532,7 +1539,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Samu Tiasha', 'samu.tiasha@gmail.com', NULL, '$2y$10$N8h72AW4emKHT/f5lf7WhOUoTDM5VGjo6GKdMu3Yn/7j0BSE5eFcK', NULL, '2019-08-26 16:11:53', '2019-08-26 16:11:53');
+(1, 'Samu Tiasha', 'samu.tiasha@gmail.com', NULL, '$2y$10$N8h72AW4emKHT/f5lf7WhOUoTDM5VGjo6GKdMu3Yn/7j0BSE5eFcK', NULL, '2019-08-26 16:11:53', '2019-08-26 16:11:53'),
+(2, 'Rakib', 'voterscc@gmail.com', NULL, '$2y$10$q5q9MlSlGqsbIEqNRyec5u0klQwSBIP0BRrCQhnf6CwYKQkBIrUmG', NULL, '2019-08-31 08:00:46', '2019-08-31 08:00:46');
 
 --
 -- Indexes for dumped tables
@@ -1595,7 +1603,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

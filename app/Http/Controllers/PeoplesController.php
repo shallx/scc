@@ -127,7 +127,8 @@ class PeoplesController extends Controller
                 return view('searchResult')->with('results', $results)->with('search_term', $search_term)->with('size', sizeof($results));
             }
             return view('searchResult')->with('errormsg', 'No Data Found!!')
-                                       ->with('search_term', $search_term);
+                                       ->with('search_term', $search_term)
+                                       ->with('results', $results);
     }
 
     public function setImagePath(){

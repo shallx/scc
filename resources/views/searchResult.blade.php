@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -16,7 +17,7 @@
                         <div class='alert alert-danger'>{{$errormsg}}</div>
                     @endisset
                     <div class="row">
-                    @if(isset($results))
+                    @if(count($results))
                         @foreach ($results as $result)
                             <div class="col-lg-6 col-xs-12">
                                 <div class="mycard m-3 border">
@@ -59,14 +60,14 @@
                     </div>
                     @endif
                 </div>
-                    @isset($results)
+                    @if(count($results))
                         <div class="container">
 
                             {{$results->render()}}
                         </div>
                     
                         
-                    @endisset
+                    @endif
             </div>
         </div>
     </div>
